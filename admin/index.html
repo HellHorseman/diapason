@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Админ-панель - LIGHT&SOUND</title>
+    <link href="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.js"></script>
+    <script>
+        CMS.init({
+            config: {
+                backend: {
+                    name: 'github',
+                    repo: 'HellHorseman/diapason',  // ЗАМЕНИТЕ!
+                    branch: 'main',
+                },
+                media_folder: 'images/uploads',
+                public_folder: '/images/uploads',
+                collections: [
+                    {
+                        name: 'settings',
+                        label: 'Настройки сайта',
+                        label_singular: 'Настройка',
+                        description: 'Основные текстовые блоки сайта',
+                        files: [
+                            {
+                                name: 'general',
+                                label: 'Общие настройки',
+                                file: 'data/content.json',
+                                description: 'Тексты на всех страницах сайта',
+                                fields: [
+                                    { label: 'Название компании', name: 'company_name', widget: 'string' },
+                                    { label: 'Заголовок H1', name: 'hero_title', widget: 'string' },
+                                    { label: 'Подзаголовок', name: 'hero_subtitle', widget: 'text' },
+                                    { label: 'Заголовок услуг', name: 'services_title', widget: 'string' },
+                                    { label: 'Подзаголовок услуг', name: 'services_subtitle', widget: 'text' },
+                                    { label: 'Заголовок оборудования', name: 'equipment_title', widget: 'string' },
+                                    { label: 'Подзаголовок оборудования', name: 'equipment_subtitle', widget: 'text' },
+                                    { label: 'Телефон', name: 'contact_phone', widget: 'string' },
+                                    { label: 'Email', name: 'contact_email', widget: 'string' },
+                                    { label: 'Адрес', name: 'contact_address', widget: 'string' },
+                                    { label: 'Заголовок контактов', name: 'contact_title', widget: 'string' },
+                                    { label: 'Подзаголовок контактов', name: 'contact_subtitle', widget: 'text' },
+                                    { label: 'Лет на рынке', name: 'years_count', widget: 'string', default: '7' },
+                                    { label: 'Клиентов', name: 'clients_count', widget: 'string', default: '500+' },
+                                    { label: 'Мероприятий', name: 'events_count', widget: 'string', default: '1000+' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'services',
+                        label: 'Услуги',
+                        label_singular: 'Услуга',
+                        folder: 'data/services',
+                        create: true,
+                        extension: 'json',
+                        format: 'json',
+                        summary: '{{fields.title}}',
+                        fields: [
+                            { label: 'Иконка (эмодзи)', name: 'icon', widget: 'string', default: '🔧' },
+                            { label: 'Название услуги', name: 'title', widget: 'string' },
+                            { label: 'Описание', name: 'description', widget: 'text' }
+                        ]
+                    },
+                    {
+                        name: 'equipment',
+                        label: 'Оборудование',
+                        label_singular: 'Единица оборудования',
+                        folder: 'data/equipment',
+                        create: true,
+                        extension: 'json',
+                        format: 'json',
+                        summary: '{{fields.name}} ({{fields.category}})',
+                        fields: [
+                            { label: 'Иконка (эмодзи)', name: 'icon', widget: 'string', default: '🔊' },
+                            { label: 'Название', name: 'name', widget: 'string' },
+                            { 
+                                label: 'Категория', 
+                                name: 'category', 
+                                widget: 'select',
+                                options: [
+                                    { label: 'Световое', value: 'light' },
+                                    { label: 'Звуковое', value: 'sound' },
+                                    { label: 'Сцены и конструкции', value: 'stages' }
+                                ]
+                            },
+                            { label: 'Краткое описание', name: 'description', widget: 'text', required: false },
+                            { label: 'Цена (в сутки)', name: 'price', widget: 'string', required: false, hint: 'Например: 5 000 ₽' }
+                        ]
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

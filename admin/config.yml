@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: HellHorseman/diapason
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Настройки"
+    files:
+      - name: "general"
+        label: "Основные тексты"
+        file: "data/content.json"
+        fields:
+          - { label: "Название компании", name: "company_name", widget: "string" }
+          - { label: "Заголовок H1", name: "hero_title", widget: "string" }
+          - { label: "Телефон", name: "contact_phone", widget: "string" }
+          - { label: "Email", name: "contact_email", widget: "string" }
+
+  - name: "services"
+    label: "Услуги"
+    folder: "data/services"
+    create: true
+    fields:
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Описание", name: "description", widget: "text" }

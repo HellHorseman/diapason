@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прокат светового и звукового оборудования</title>
+    <meta name="description" content="Профессиональный прокат светового и звукового оборудования для мероприятий любого масштаба. Доставка, монтаж, обслуживание.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="logo-img">
+                <span class="logo-text" data-field="company_name">Диапазон</span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#equipment">Оборудование</a>
+                <a href="#contact">Контакты</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Дипазон</div>
+                <h1 data-field="hero_title">Прокат профессионального <span class="highlight">светового и звукового</span> оборудования</h1>
+                <p data-field="hero_subtitle">Проведите мероприятие на высшем уровне с качественным оборудованием. Доставка, настройка, ремонт и обслуживание.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openQuoteForm()">Получить расчёт</button> 
+                    <button class="btn btn-outline" onclick="scrollToContact()">Связаться</button>
+                </div> 
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-field="years_count">с 2013</div>
+                        <div class="stat-label">на рынке</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-field="clients_count">500+</div>
+                        <div class="stat-label">довольных клиентов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-field="events_count">1000+</div>
+                        <div class="stat-label">мероприятий</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Что мы предлагаем</span>
+                <h2 data-field="services_title">Наши услуги</h2>
+                <p data-field="services_subtitle">Мы занимаемся прокатом, продажей, ремонтом и установкой профессионального звукового, светового и сценического оборудования. Что это значит?
+                    Это значит, что:</p>
+                    <p data-field="services_subtitle"></p>1. У нас есть парк оборудования, который мы сдаем в аренду на мероприятия разного рода (концерты, свадьбы, юбилеи, спортивные соревнования, театральные представления, выпускные и пр.). Пример наших работ, тезисно, можно увидеть в instagram</p>
+                    <p data-field="services_subtitle"></p>2. Мы являемся сервисным центром по ремонту профессионального концертного оборудования. Ремонтируем свое оборудование своевременно, являемся сервисным центром сети Музторг и Ваше оборудование отремонтируем. Самые распространенные случаи размещаем на канале YouTube</p>
+                    <p data-field="services_subtitle"></p>3. По опыту лет собрали необходимую базу запчастей для своевременного ремонта. Если каких-то запчастей нет в наличии, то постараемся привезти их под заказ. Преимущественно используем оригинальные запчасти.</p>
+                    <p data-field="services_subtitle"></p>4. Так же занимаемся продажей оборудования, но только под заказ. Мы не продаем какой-то бренд, мы предлагаем, то что Вам нужно. С учетом опыта работы сервисного центра и прокатной деятельности - поможем Вам подобрать надежную и качественную технику в рамках Вашего бюджета.</p>
+            </div>
+            <div class="services-grid" id="services-grid">
+            </div>
+        </div>
+    </section>
+
+    <section id="equipment" class="equipment">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Каталог</span>
+                <h2 data-field="equipment_title">Оборудование в аренду</h2>
+                <p data-field="equipment_subtitle">Современные бренды, отличное состояние, полная комплектация</p>
+            </div>
+            <div class="equipment-tabs">
+                <button class="tab-btn active" data-category="light">Световое</button>
+                <button class="tab-btn" data-category="sound">Звуковое</button>
+                <button class="tab-btn" data-category="stages">Сцены и конструкции</button>
+            </div>
+            <div class="equipment-grid" id="equipment-grid">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">Свяжитесь с нами</span>
+                    <h2 data-field="contact_title">Нужна консультация?</h2>
+                    <p data-field="contact_subtitle">Оставьте заявку, и наш специалист свяжется с вами</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <div class="contact-label">Телефон</div>
+                                <div class="contact-value" data-field="contact_phone">+7(8482)62-04-02</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value" data-field="contact_email">diapason@list.ru</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-label">Адрес</div>
+                                <div class="contact-value" data-field="contact_address">445031, РФ, Самарская обл., г. Тольятти, ул. 70 Лет Октября, 54А</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="callback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Телефон" required>
+                        <input type="email" placeholder="Email">
+                        <textarea rows="4" placeholder="Комментарий к заказу"></textarea>
+                        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="logo-img">
+                    <span data-field="company_name">Диапазон</span>
+                    <p>Профессиональный прокат<br>оборудования с 2013 года</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <a href="#hero">Главная</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#equipment">Оборудование</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p data-field="contact_phone">+7(8482)62-04-02</p>
+                    <p data-field="contact_email">diapason@list.ru</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Диапазон. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
