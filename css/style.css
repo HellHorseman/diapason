@@ -129,6 +129,12 @@ nav {
 }
 
 .logo-img {
+    height: 200px;
+    width: auto;
+    display: block;
+}
+
+.logo-img-head {
     height: 40px;
     width: auto;
     display: block;
