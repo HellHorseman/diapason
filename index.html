@@ -21,18 +21,6 @@
 
         var placemark = new ymaps.Placemark(coords, {
             hintContent: 'Диапазон',
-            balloonContentHeader: '<b>Диапазон</b>',
-            balloonContentBody: 'Прокат светового и звукового оборудования',
-            balloonContentFooter: 'г. Тольятти, ул. 70 Лет Октября, 54А',
-            balloonContent: `
-                <div style="padding: 5px;">
-                    <strong>Диапазон</strong><br>
-                    Прокат светового и звукового оборудования<br>
-                    <br>
-                    📍 г. Тольятти, ул. 70 Лет Октября, 54А<br>
-                    📞 +7 (8482) 62-04-02
-                </div>
-            `
         }, {
             preset: 'islands#blueCircleIcon',
             iconColor: '#0066ff',
@@ -41,11 +29,8 @@
 
         myMap.geoObjects.add(placemark);
 
-        // Открываем балун при загрузке (опционально)
-        // placemark.balloon.open();
     }
 
-    // Ждём загрузки страницы и Яндекс карт
     ymaps.ready(initMap);
 </script>
 <body>
@@ -67,6 +52,10 @@
     </header>
 
     <section id="hero" class="hero">
+        <div class="hero-wrapper">
+            <div class="hero-logo">
+                <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="hero-logo-img">
+            </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Дипазон</div>
@@ -93,6 +82,7 @@
             </div>
         </div>
         <div class="hero-bg"></div>
+        </div>
     </section>
 
     <section id="services" class="services">
