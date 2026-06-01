@@ -1,7 +1,6 @@
-const REPO_OWNER = 'HellHorseman';  // ЗАМЕНИТЕ!
-const REPO_NAME = 'diapason';  // ЗАМЕНИТЕ!
+const REPO_OWNER = 'HellHorseman';
+const REPO_NAME = 'diapason';
 
-// Загрузка контента с GitHub (публичный репозиторий)
 async function loadContent() {
     const url = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/content.json?t=${Date.now()}`;
     
@@ -19,7 +18,6 @@ async function loadContent() {
 }
 
 function applyContent(data) {
-    // Текстовые поля с data-field атрибутами
     document.querySelectorAll('[data-field]').forEach(el => {
         const field = el.getAttribute('data-field');
         if (data[field]) {
@@ -117,7 +115,7 @@ document.getElementById('callback-form')?.addEventListener('submit', async (e) =
     button.textContent = 'Отправка...';
     button.disabled = true;
     
-    // Здесь можно добавить отправку на ваш бэкенд или Telegram бота
+    // Здесь можно добавить отправку на бэкенд или Telegram бота
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     button.textContent = '✅ Заявка отправлена!';

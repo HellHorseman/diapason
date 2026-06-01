@@ -8,6 +8,46 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 </head>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU"></script>
+<script>
+    function initMap() {
+        var coords = [53.544059, 49.337461];
+
+        var myMap = new ymaps.Map('map', {
+            center: coords,
+            zoom: 17,
+            controls: ['zoomControl', 'fullscreenControl']
+        });
+
+        var placemark = new ymaps.Placemark(coords, {
+            hintContent: 'Диапазон',
+            balloonContentHeader: '<b>Диапазон</b>',
+            balloonContentBody: 'Прокат светового и звукового оборудования',
+            balloonContentFooter: 'г. Тольятти, ул. 70 Лет Октября, 54А',
+            balloonContent: `
+                <div style="padding: 5px;">
+                    <strong>Диапазон</strong><br>
+                    Прокат светового и звукового оборудования<br>
+                    <br>
+                    📍 г. Тольятти, ул. 70 Лет Октября, 54А<br>
+                    📞 +7 (8482) 62-04-02
+                </div>
+            `
+        }, {
+            preset: 'islands#blueCircleIcon',
+            iconColor: '#0066ff',
+            balloonLayout: 'default#imageWithContent'
+        });
+
+        myMap.geoObjects.add(placemark);
+
+        // Открываем балун при загрузке (опционально)
+        // placemark.balloon.open();
+    }
+
+    // Ждём загрузки страницы и Яндекс карт
+    ymaps.ready(initMap);
+</script>
 <body>
 
     <header>
@@ -120,15 +160,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="callback-form">
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="tel" placeholder="Телефон" required>
-                        <input type="email" placeholder="Email">
-                        <textarea rows="4" placeholder="Комментарий к заказу"></textarea>
-                        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
-                    </form>
+                <div class="contact-map">
+                    <div id="map"></div>
                 </div>
+<!--                <div class="contact-form">-->
+<!--                    <form id="callback-form">-->
+<!--                        <input type="text" placeholder="Ваше имя" required>-->
+<!--                        <input type="tel" placeholder="Телефон" required>-->
+<!--                        <input type="email" placeholder="Email">-->
+<!--                        <textarea rows="4" placeholder="Комментарий к заказу"></textarea>-->
+<!--                        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>-->
+<!--                    </form>-->
+<!--                </div>-->
             </div>
         </div>
     </section>
@@ -139,7 +182,7 @@
                 <div class="footer-logo">
                     <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="logo-img">
                     <span data-field="company_name">Диапазон</span>
-                    <p>Профессиональный прокат<br>оборудования с 2013 года</p>
+                    <p>Профессиональный прокат<br>оборудования с 2008 года</p>
                 </div>
                 <div class="footer-links">
                     <h4>Навигация</h4>
@@ -155,7 +198,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Диапазон. Все права защищены.</p>
+                <p>&copy; 2008-2026 Диапазон. Все права защищены.</p>
             </div>
         </div>
     </footer>
