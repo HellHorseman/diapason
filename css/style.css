@@ -590,7 +590,7 @@ footer {
 
 @media (max-width: 768px) {
     .hero-wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 
