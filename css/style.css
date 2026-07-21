@@ -366,24 +366,24 @@ nav {
     margin-bottom: 8px;
 }
 
-.equipment-category {
-    font-size: 12px;
-    color: #0066ff;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
+/*.equipment-category {*/
+/*    font-size: 12px;*/
+/*    color: #0066ff;*/
+/*    text-transform: uppercase;*/
+/*    margin-bottom: 12px;*/
+/*}*/
 
-.equipment-desc {
-    font-size: 14px;
-    color: #a0a0a0;
-    margin-bottom: 16px;
-}
+/*.equipment-desc {*/
+/*    font-size: 14px;*/
+/*    color: #a0a0a0;*/
+/*    margin-bottom: 16px;*/
+/*}*/
 
-.equipment-price {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0066ff;
-}
+/*.equipment-price {*/
+/*    font-size: 20px;*/
+/*    font-weight: 700;*/
+/*    color: #0066ff;*/
+/*}*/
 
 .contact {
     padding: 100px 0;

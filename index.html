@@ -42,9 +42,9 @@
                 <span class="logo-text" data-field="company_name">Диапазон</span>
             </div>
             <div class="nav-links">
-                <a href="#hero">Главная</a>
-                <a href="#services">Услуги</a>
-                <a href="#equipment">Оборудование</a>
+<!--                <a href="#hero">Главная</a>-->
+                <a href="#equipment">Прокат</a>
+                <a href="#services">Сервиси</a>
                 <a href="#contact">Контакты</a>
             </div>
             <button class="mobile-menu-btn">☰</button>
@@ -62,7 +62,7 @@
                 <h1 data-field="hero_title">Прокат профессионального <span class="highlight">светового и звукового</span> оборудования</h1>
                 <p data-field="hero_subtitle">Проведите мероприятие на высшем уровне с качественным оборудованием. Доставка, настройка, ремонт и обслуживание.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openQuoteForm()">Получить расчёт</button> 
+<!--                    <button class="btn btn-primary" onclick="openQuoteForm()">Получить расчёт</button> -->
                     <button class="btn btn-outline" onclick="scrollToContact()">Связаться</button>
                 </div> 
                 <div class="hero-stats">
@@ -85,10 +85,39 @@
         </div>
     </section>
 
+    <section id="equipment" class="equipment">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Прокат</span>
+                <h2 data-field="equipment_title">Оборудование в аренду</h2>
+                <p data-field="equipment_subtitle">Современные бренды, отличное состояние, полная комплектация</p>
+            </div>
+            <div class="equipment-grid" id="equipment-grid">
+<!--                <div class="equipment-tabs">-->
+                    <div class="equipment-card">
+                        <img class="equipment-image" src="images/1000013626.jpg" alt="звук">
+                         <span class="equipment-tabs">Звуковое</span>
+    <!--                    <button class="tab-btn" data-category="sound">Звуковое</button>-->
+                    </div>
+                    <div class="equipment-card">
+                        <img class="equipment-image" src="images/1000014781.jpg" alt="Свет">
+                         <span class="equipment-tabs">Световое</span>
+    <!--                    <button class="tab-btn active" data-category="light">Световое</button>-->
+                    </div>
+                    <div class="equipment-card">
+                        <img class="equipment-image" src="images/1000001865.jpg" alt="Сцена">
+                        <span class="equipment-tabs">Сценические конструкции</span>
+    <!--                    <button class="tab-btn" data-category="stages">Сцены и конструкции</button>-->
+                    </div>
+                </div>
+<!--            </div>-->
+        </div>
+    </section>
+
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Что мы предлагаем</span>
+                <span class="section-tag">Что мы предлагаем (эта инфа скорее всего переедет и нужно редактировать, просто заложить дизайн, шрифт под эту историю)</span>
                 <h2 data-field="services_title">Наши услуги</h2>
                 <p data-field="services_subtitle">Мы занимаемся прокатом, продажей, ремонтом и установкой профессионального звукового, светового и сценического оборудования. Что это значит?
                     Это значит, что:</p>
@@ -98,26 +127,19 @@
                 <p data-field="services_subtitle"> 4. Так же занимаемся продажей оборудования, но только под заказ. Мы не продаем какой-то бренд, мы предлагаем, то что Вам нужно. С учетом опыта работы сервисного центра и прокатной деятельности - поможем Вам подобрать надежную и качественную технику в рамках Вашего бюджета.</p>
             </div>
             <div class="services-grid" id="services-grid">
+                <div class="service-card">
+                    <img class="equipment-image" src="images/Картинка-О-сервисе.jpg" alt="Сервис">
+                    <span>Сервис</span>
+                </div>
+                <div class="service-card">
+                    <img class="equipment-image" src="images/store.jpg" alt="Магазин">
+                    <span>DPSNSHOP.RU</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="equipment" class="equipment">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Каталог</span>
-                <h2 data-field="equipment_title">Оборудование в аренду</h2>
-                <p data-field="equipment_subtitle">Современные бренды, отличное состояние, полная комплектация</p>
-            </div>
-            <div class="equipment-tabs">
-                <button class="tab-btn active" data-category="light">Световое</button>
-                <button class="tab-btn" data-category="sound">Звуковое</button>
-                <button class="tab-btn" data-category="stages">Сцены и конструкции</button>
-            </div>
-            <div class="equipment-grid" id="equipment-grid">
-            </div>
-        </div>
-    </section>
+
 
     <section id="contact" class="contact">
         <div class="container">
@@ -177,8 +199,8 @@
                 <div class="footer-links">
                     <h4>Навигация</h4>
                     <a href="#hero">Главная</a>
-                    <a href="#services">Услуги</a>
-                    <a href="#equipment">Оборудование</a>
+                    <a href="#equipment">Прокат</a>
+                    <a href="#services">Сервис</a>
                     <a href="#contact">Контакты</a>
                 </div>
                 <div class="footer-contacts">
