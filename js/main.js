@@ -101,6 +101,10 @@ function openQuoteForm() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
 
+function scrollToHero() {
+    document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+}
+
 function scrollToContact() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
