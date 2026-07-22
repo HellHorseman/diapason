@@ -113,6 +113,10 @@ function scrollToServices() {
     document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
 }
 
+function goToShop() {
+    window.open('http://dpsnshop.ru', '_blank', 'noopener,noreferrer');
+}
+
 // Обработка формы
 document.getElementById('callback-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
