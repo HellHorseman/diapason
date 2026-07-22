@@ -105,6 +105,14 @@ function scrollToContact() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
 
+function scrollToEquipment() {
+    document.getElementById('equipment')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToServices() {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+}
+
 // Обработка формы
 document.getElementById('callback-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
