@@ -24,21 +24,7 @@
     ymaps.ready(initMap);
 </script>
 
-<header>
-        <nav class="container">
-            <div class="logo" onclick="scrollToHero()">
-                <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="logo-img-head">
-                <span class="logo-text" data-field="company_name">Диапазон</span>
-            </div>
-            <div class="nav-links">
-<!--                <a href="#hero">Главная</a>-->
-                <a href="#equipment">Прокат</a>
-                <a href="#services">Сервис</a>
-                <a href="#contact">Контакты</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-        </nav>
-    </header>
+
 
       <div class="hero-content">
                     <div class="hero-badge">Дипазон</div>
@@ -67,34 +53,7 @@
 
                  <div class="hero-bg"></div>
 
-                  <section id="equipment" class="equipment">
-                         <div class="container">
-                             <div class="section-header">
-                                 <span class="section-tag">Прокат</span>
-                                 <h2 data-field="equipment_title">Оборудование в аренду</h2>
-                                 <p data-field="equipment_subtitle">Современные бренды, отличное состояние, полная комплектация</p>
-                             </div>
-                             <div class="equipment-grid" id="equipment-grid">
-                 <!--                <div class="equipment-tabs">-->
-                                     <div class="equipment-card">
-                                         <img class="equipment-image" src="images/1000013626.jpg" alt="звук">
-                                          <span class="equipment-tabs">Звуковое</span>
-                     <!--                    <button class="tab-btn" data-category="sound">Звуковое</button>-->
-                                     </div>
-                                     <div class="equipment-card">
-                                         <img class="equipment-image" src="images/1000014781.jpg" alt="Свет">
-                                          <span class="equipment-tabs">Световое</span>
-                     <!--                    <button class="tab-btn active" data-category="light">Световое</button>-->
-                                     </div>
-                                     <div class="equipment-card">
-                                         <img class="equipment-image" src="images/1000001865.jpg" alt="Сцена">
-                                         <span class="equipment-tabs">Сценические конструкции</span>
-                     <!--                    <button class="tab-btn" data-category="stages">Сцены и конструкции</button>-->
-                                     </div>
-                                 </div>
-                 <!--            </div>-->
-                         </div>
-                     </section>
+
 
                      <section id="services" class="services">
                          <div class="container">
@@ -170,31 +129,6 @@
                          </div>
                      </section>
 
-                     <footer>
-                         <div class="container">
-                             <div class="footer-content">
-                                 <div class="footer-logo">
-                                     <img src="images/diapason_logo_preview.jpg" alt="Диапазон" class="logo-img">
-                                     <span data-field="company_name">Диапазон</span>
-                                     <p>Профессиональный прокат<br>оборудования с 2008 года</p>
-                                 </div>
-                                 <div class="footer-links">
-                                     <h4>Навигация</h4>
-                                     <a href="#hero">Главная</a>
-                                     <a href="#equipment">Прокат</a>
-                                     <a href="#services">Сервис</a>
-                                     <a href="#contact">Контакты</a>
-                                 </div>
-                                 <div class="footer-contacts">
-                                     <h4>Контакты</h4>
-                                     <p data-field="contact_phone">+7(8482)62-04-02</p>
-                                     <p data-field="contact_email">diapason@list.ru</p>
-                                 </div>
-                             </div>
-                             <div class="footer-bottom">
-                                 <p>&copy; 2008-2026 Диапазон. Все права защищены. Дизайн и разработка Эдуард Шеффер</p>
-                             </div>
-                         </div>
-                     </footer>
+
 
                      <script src="js/main.js"></script>
