@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000000;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    gap: 60px;
+}
+
+.hero-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    max-height: 100vh;
+}
+
+.hero-logo-img {
+    width: 360px;
+    height: 489px;
+    object-fit: contain;
+    display: block;
+}
+
+.fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero-container {
+    flex: 1.5;
+    position: relative;
+    border-radius: 30px;
+    padding: 60px 50px;
+    min-height: 550px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 30px;
+
+    background:
+            linear-gradient(
+                    to right,
+                    #000000 0%,
+                    rgba(0, 0, 0, 0.6) 25%,
+                    rgba(0, 0, 0, 0.2) 50%,
+                    rgba(0, 0, 0, 0.75) 65%,
+                    rgba(0, 0, 0, 0.95) 75%,
+                    #000000 100%
+            ),
+            url("../images/задникГлавная.jpg") center/cover no-repeat;
+
+    filter: brightness(0.7);
+    -webkit-filter: brightness(0.7);
+    transform: scale(1.02);
+}
+
+
+.equipment-grid {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    align-items: flex-start;
+    padding-left: 70px;
+}
+
+.equipment-card {
+    display: block;
+    text-decoration: none;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.equipment-card:hover {
+    transform: scale(1.05);
+}
+
+.equipment-card:active {
+    transform: scale(0.97);
+}
+
+.card-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    text-shadow: none;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.equipment-card:hover .card-label {
+    color: rgba(255, 255, 255, 0.5);
+}

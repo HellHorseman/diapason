@@ -1,0 +1,408 @@
+@media (max-width: 1024px) {
+    .hero-wrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        gap: 40px;
+        padding: 40px 0;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 0 30px;
+    }
+
+    .hero-logo {
+        flex: none;
+        width: 100%;
+        max-height: none;
+        padding: 0;
+    }
+
+    .hero-logo-img {
+        width: 280px;
+        height: auto;
+        max-height: 380px;
+    }
+
+    .hero-container {
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+        padding: 50px 40px;
+        border-radius: 24px;
+    }
+
+    .hero-container::before {
+        border-radius: 24px;
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+    }
+
+    .equipment-grid {
+        gap: 60px;
+        max-width: 400px;
+        padding-left: 40px;
+        align-items: center;
+    }
+
+    .card-label {
+        font-size: 48px;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero-wrapper {
+        gap: 30px;
+        padding: 30px 0;
+        justify-content: flex-start;
+    }
+
+    .hero-logo-img {
+        width: 220px;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .hero-container {
+        min-height: 450px;
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+
+    .hero-container::before {
+        border-radius: 20px;
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+    }
+
+    .equipment-grid {
+        gap: 40px;
+        max-width: 100%;
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .equipment-card {
+        padding: 4px 0;
+    }
+
+    .card-label {
+        font-size: 40px;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 0 16px;
+    }
+
+    .hero-wrapper {
+        gap: 24px;
+        padding: 20px 0;
+        justify-content: flex-start;
+    }
+
+    .hero-logo-img {
+        width: 180px;
+        height: auto;
+        max-height: 250px;
+    }
+
+    .hero-container {
+        min-height: 380px;
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .hero-container::before {
+        border-radius: 16px;
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+        background-position: center 30%;
+    }
+
+    .equipment-grid {
+        gap: 30px;
+        padding-left: 10px;
+        align-items: center;
+    }
+
+    .equipment-card {
+        padding: 4px 0;
+        text-align: center;
+    }
+
+    .card-label {
+        font-size: 32px;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.35);
+    }
+}
+
+@media (max-width: 400px) {
+    .hero {
+        padding: 0 12px;
+    }
+
+    .hero-wrapper {
+        gap: 20px;
+        padding: 16px 0;
+        justify-content: flex-start;
+    }
+
+    .hero-logo-img {
+        width: 140px;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .hero-container {
+        min-height: 320px;
+        padding: 24px 16px;
+        border-radius: 14px;
+    }
+
+    .hero-container::before {
+        border-radius: 14px;
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+        background-position: center 20%;
+    }
+
+    .equipment-grid {
+        gap: 20px;
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .equipment-card {
+        padding: 2px 0;
+    }
+
+    .card-label {
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-wrapper {
+        max-width: 1600px;
+        gap: 80px;
+    }
+
+    .hero-logo-img {
+        width: 440px;
+        height: auto;
+        max-height: 600px;
+    }
+
+    .hero-container {
+        padding: 80px 70px;
+        min-height: 650px;
+    }
+
+    .hero-container::before {
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+    }
+
+    .equipment-grid {
+        gap: 120px;
+        max-width: 600px;
+        padding-left: 80px;
+    }
+
+    .card-label {
+        font-size: 80px;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 0 30px;
+    }
+
+    .hero-wrapper {
+        flex-direction: row;
+        height: 100vh;
+        gap: 30px;
+        padding: 20px 0;
+        justify-content: center;
+    }
+
+    .hero-logo {
+        flex: 0.4;
+        min-width: 100px;
+        max-height: 100vh;
+    }
+
+    .hero-logo-img {
+        width: 120px;
+        height: auto;
+        max-height: 180px;
+    }
+
+    .hero-container {
+        flex: 1;
+        height: 90vh;
+        min-height: 300px;
+        padding: 30px 40px;
+        border-radius: 20px;
+    }
+
+    .hero-container::before {
+        border-radius: 20px;
+        background:
+                linear-gradient(
+                        to bottom,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.5) 15%,
+                        rgba(0, 0, 0, 0.1) 35%,
+                        rgba(0, 0, 0, 0.1) 65%,
+                        rgba(0, 0, 0, 0.6) 85%,
+                        #000000 100%
+                ),
+                linear-gradient(
+                        to right,
+                        #000000 0%,
+                        rgba(0, 0, 0, 0.8) 25%,
+                        rgba(0, 0, 0, 0.2) 50%,
+                        rgba(0, 0, 0, 0.7) 55%,
+                        rgba(0, 0, 0, 0.9) 75%,
+                        #000000 100%
+                ),
+                url("../images/задникГлавная.jpg") center/cover no-repeat;
+        filter: brightness(0.7);
+        -webkit-filter: brightness(0.7);
+        transform: scale(1.02);
+    }
+
+    .equipment-grid {
+        gap: 20px;
+        max-width: 400px;
+        padding-left: 30px;
+        align-items: flex-start;
+    }
+
+    .card-label {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+}

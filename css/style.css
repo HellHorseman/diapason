@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #0a0a0a;
+    background: #000000;
+    opacity: 50%;
     color: #ffffff;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -210,6 +211,7 @@ nav {
 }
 
 .hero-logo {
+
     flex: 1;
     display: flex;
     justify-content: center;
