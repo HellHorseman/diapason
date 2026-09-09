@@ -2,14 +2,15 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Прокат</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прокат оборудования</title>
     <link rel="stylesheet" href="css/catalogStyle.css">
     <link rel="stylesheet" href="css/media.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+<header>
     <nav class="container">
         <div class="logo">
             <img src="images/headerLogo.svg" alt="Диапазон" class="logo-img-head">
@@ -21,57 +22,87 @@
         </div>
         <button class="mobile-menu-btn">☰</button>
     </nav>
-    </header>
-    <section id="equipment" class="equipment">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Прокат</span>
-            </div>
-            <div class="equipment-grid" id="equipment-grid">
-                <!--                <div class="equipment-tabs">-->
-                <div class="equipment-card">
-                    <img class="light-image" src="images/svet.png" alt="Свет">
-                    <span class="equipment-tabs">Световое</span>
-                    <!--                    <button class="tab-btn" data-category="sound">Звуковое</button>-->
-                </div>
-                <div class="equipment-card">
-                    <img class="sound-image" src="images/sound.png" alt="Звук">
-                    <span class="equipment-tabs">Звуковое</span>
-                    <!--                    <button class="tab-btn active" data-category="light">Световое</button>-->
-                </div>
-                <div class="equipment-card">
-                    <img class="stage-image" src="images/stage.png" alt="Сцена">
-                    <span class="equipment-tabs">Сценические конструкции</span>
-                    <!--                    <button class="tab-btn" data-category="stages">Сцены и конструкции</button>-->
-                </div>
-            </div>
-            <!--            </div>-->
-        </div>
-    </section>
+</header>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/footerLogo.svg" alt="Диапазон" class="logo-img">
+<section id="equipment" class="equipment">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Прокат</span>
+        </div>
+        <div class="equipment-grid">
+            <div class="equipment-card" data-category="light">
+                <div class="equipment-card-inner">
+                    <div class="equipment-image-wrapper">
+                        <img class="equipment-image light-image" src="images/svet.png" alt="Световое оборудование">
+                    </div>
                 </div>
-                <div class="footer-contacts">
-                    <h4>Контакты</h4>
-                    <p data-field="contact_phone">+7(8482)62-04-02</p>
-                    <p data-field="contact_email">diapason@list.ru</p>
-                    <p data-field="contact_address">ул. 70 лет Октября, 54А</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Компания</h4>
-                    <a href="index.html">Главная</a>
-                    <a href="#services">Сервис</a>
-                    <a href="#contact">Контакты</a>
+                <div class="equipment-info">
+                    <span class="equipment-tabs">СВЕТОВОЕ</span>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2008-2026 Диапазон. Все права защищены.</p>
+
+            <div class="equipment-card" data-category="sound">
+                <div class="equipment-card-inner">
+                    <div class="equipment-image-wrapper">
+                        <img class="equipment-image sound-image" src="images/sound.png" alt="Звуковое оборудование">
+                    </div>
+                </div>
+                <div class="equipment-info">
+                    <span class="equipment-tabs">ЗВУКОВОЕ</span>
+                </div>
+            </div>
+
+            <div class="equipment-card" data-category="stage">
+                <div class="equipment-card-inner">
+                    <div class="equipment-image-wrapper">
+                        <img class="equipment-image stage-image" src="images/stage.png" alt="Сценические конструкции">
+                    </div>
+                </div>
+                <div class="equipment-info">
+                    <span class="equipment-tabs">СЦЕНИЧЕСКИЕ<br>КОНСТРУКЦИИ</span>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<div class="popup-overlay" id="popup">
+    <div class="popup-content">
+        <button class="popup-close" id="popup-close">✕</button>
+        <div class="carousel-container">
+            <button class="carousel-btn prev" id="prev-btn">‹</button>
+            <div class="carousel-track" id="carousel-track"></div>
+            <button class="carousel-btn next" id="next-btn">›</button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/footerLogo.svg" alt="Диапазон" class="logo-img">
+            </div>
+            <div class="footer-contacts">
+                <h4>Контакты</h4>
+                <p data-field="contact_phone">+7(8482)62-04-02</p>
+                <p data-field="contact_email">diapason@list.ru</p>
+                <p data-field="contact_address">ул. 70 лет Октября, 54А</p>
+            </div>
+            <div class="footer-links">
+                <h4>Компания</h4>
+                <a href="index.html">Главная</a>
+                <a href="#services">Сервис</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2008-2026 Диапазон. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/catalog.js"></script>
 </body>
 </html>
