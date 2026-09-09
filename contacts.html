@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/catalogStyle.css">
+    <link rel="stylesheet" href="css/contactsStyle.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=37a3b0bc-fddf-473d-9355-5f0302f0822c&lang=ru_RU"></script>
+</head>
+<body>
+<header>
+    <nav class="container">
+        <div class="logo">
+            <img src="images/headerLogo.svg" alt="Диапазон" class="logo-img-head">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Прокат</a>
+            <a href="#services">Сервис</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+</header>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span class="section-tag">КОНТАКТЫ</span>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-label">НОМЕР ТЕЛЕФОНА</span>
+                        <span class="contact-value" data-field="contact_phone">+7 (8482) 62-04-02</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">EMAIL</span>
+                        <span class="contact-value" data-field="contact_email">diapason@list.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">АДРЕС</span>
+                        <span class="contact-value" data-field="contact_address">ул. 70 Лет Октября, 54А</span>
+                    </div>
+                </div>
+                <button class="map-toggle-btn" id="mapToggleBtn">
+                    <span class="btn-text">Показать на карте</span>
+                    <span class="btn-arrow">▼</span>
+                </button>
+            </div>
+
+            <div class="contact-map" id="contactMap">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/footerLogo.svg" alt="Диапазон" class="logo-img">
+            </div>
+            <div class="footer-contacts">
+                <h4>Контакты</h4>
+                <p data-field="contact_phone">+7(8482)62-04-02</p>
+                <p data-field="contact_email">diapason@list.ru</p>
+                <p data-field="contact_address">ул. 70 лет Октября, 54А</p>
+            </div>
+            <div class="footer-links">
+                <h4>Компания</h4>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Прокат</a>
+                <a href="#services">Сервис</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2008-2026 Диапазон. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/contacts.js"></script>
+</body>
+</html>

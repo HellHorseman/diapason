@@ -82,52 +82,7 @@
 
 
 
-                     <section id="contact" class="contact">
-                         <div class="container">
-                             <div class="contact-grid">
-                                 <div class="contact-info">
-                                     <span class="section-tag">Свяжитесь с нами</span>
-                                     <h2 data-field="contact_title">Нужна консультация?</h2>
-                                     <p data-field="contact_subtitle">Оставьте заявку, и наш специалист свяжется с вами</p>
-                                     <div class="contact-details">
-                                         <div class="contact-item">
-                                             <div class="contact-icon">📞</div>
-                                             <div>
-                                                 <div class="contact-label">Телефон</div>
-                                                 <div class="contact-value" data-field="contact_phone">+7(8482)62-04-02</div>
-                                             </div>
-                                         </div>
-                                         <div class="contact-item">
-                                             <div class="contact-icon">✉️</div>
-                                             <div>
-                                                 <div class="contact-label">Email</div>
-                                                 <div class="contact-value" data-field="contact_email">diapason@list.ru</div>
-                                             </div>
-                                         </div>
-                                         <div class="contact-item">
-                                             <div class="contact-icon">📍</div>
-                                             <div>
-                                                 <div class="contact-label">Адрес</div>
-                                                 <div class="contact-value" data-field="contact_address">445031, РФ, Самарская обл., г. Тольятти, ул. 70 Лет Октября, 54А</div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="contact-map">
-                                     <div id="map"></div>
-                                 </div>
-                 <!--                <div class="contact-form">-->
-                 <!--                    <form id="callback-form">-->
-                 <!--                        <input type="text" placeholder="Ваше имя" required>-->
-                 <!--                        <input type="tel" placeholder="Телефон" required>-->
-                 <!--                        <input type="email" placeholder="Email">-->
-                 <!--                        <textarea rows="4" placeholder="Комментарий к заказу"></textarea>-->
-                 <!--                        <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>-->
-                 <!--                    </form>-->
-                 <!--                </div>-->
-                             </div>
-                         </div>
-                     </section>
+
 
 
 
