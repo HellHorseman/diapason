@@ -212,9 +212,9 @@
     }
 
     .hero-logo-img {
-        width: 110px;
+        width: 150px;
         height: auto;
-        max-height: 140px;
+        max-height: 200px;
     }
 
     .hero-container {
