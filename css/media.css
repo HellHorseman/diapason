@@ -24,7 +24,7 @@
     }
 
     .hero-logo-img {
-        width: 200px;
+        width: 300px;
         height: auto;
         max-height: 260px;
     }
@@ -69,12 +69,12 @@
         transform: scale(1.02);
     }
 
-    .equipment-grid {
-        gap: 24px;
-        max-width: 380px;
-        padding-left: 20px;
-        align-items: flex-start;
-    }
+    /*.equipment-grid {*/
+    /*    gap: 24px;*/
+    /*    max-width: 380px;*/
+    /*    padding-left: 20px;*/
+    /*    align-items: flex-start;*/
+    /*}*/
 
     .card-label {
         font-size: 40px;
@@ -113,7 +113,7 @@
     }
 
     .hero-logo-img {
-        width: 130px;
+        width: 270px;
         height: auto;
         max-height: 170px;
         object-fit: contain;
@@ -166,7 +166,7 @@
     }
 
     .equipment-grid {
-        gap: 14px;
+        gap: 60px;
         max-width: 100%;
         padding-left: 10px;
         align-items: center;
@@ -175,8 +175,13 @@
     }
 
     .equipment-card {
+        margin-top: 20px;
         padding: 4px 0;
         text-align: center;
+    }
+
+    .equipment-card[data-category="sound"] {
+        margin-top: 40px; /* Сдвигаем звук ниже, чтобы колонка не налезала на свет */
     }
 
     .card-label {
@@ -212,7 +217,7 @@
     }
 
     .hero-logo-img {
-        width: 110px;
+        width: 250px;
         height: auto;
         max-height: 140px;
     }
@@ -286,7 +291,7 @@
     }
 
     .hero-logo-img {
-        width: 90px;
+        width: 210px;
         height: auto;
         max-height: 120px;
     }
@@ -365,7 +370,7 @@
     }
 
     .hero-logo-img {
-        width: 70px;
+        width: 150px;
         height: auto;
         max-height: 100px;
     }
