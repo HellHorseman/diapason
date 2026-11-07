@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Админ-панель - Диапазон</title>
-    <link href="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.css" rel="stylesheet">
+    <link href="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" rel="stylesheet">
 </head>
 <body>
-    <script src="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.js"></script>
+<script>
+    window.CMS_MANUAL_INIT = true;
+</script>
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
     <script>
         CMS.init({
             config: {
+                load_config_file: false,
                 backend: {
-                    load_config_file: false,
                     name: 'github',
                     repo: 'HellHorseman/diapason',
                     branch: 'main',
