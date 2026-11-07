@@ -69,13 +69,6 @@
         transform: scale(1.02);
     }
 
-    /*.equipment-grid {*/
-    /*    gap: 24px;*/
-    /*    max-width: 380px;*/
-    /*    padding-left: 20px;*/
-    /*    align-items: flex-start;*/
-    /*}*/
-
     .card-label {
         font-size: 40px;
         letter-spacing: 1.5px;
@@ -181,7 +174,7 @@
     }
 
     .equipment-card[data-category="sound"] {
-        margin-top: 40px; /* Сдвигаем звук ниже, чтобы колонка не налезала на свет */
+        margin-top: 40px;
     }
 
     .card-label {
