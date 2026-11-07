@@ -1,33 +1,36 @@
-const categories = {
-    light: {
-        name: 'Световое оборудование',
-        images: [
-            'images/light/1.jpg',
-            'images/light/2.jpg',
-            'images/light/3.jpg',
-            'images/light/4.jpg',
-        ]
-    },
-    sound: {
-        name: 'Звуковое оборудование',
-        images: [
-            'images/sound/1.jpg',
-            'images/sound/2.jpg',
-            'images/sound/3.jpg',
-            'images/sound/4.jpg',
-        ]
-    },
-    stage: {
-        name: 'Сценические конструкции',
-        images: [
-            'images/stage/1.jpg',
-            'images/stage/2.jpg',
-            'images/stage/3.jpg',
-            'images/stage/4.jpg',
-        ]
-    }
-};
+// ===== ДИНАМИЧЕСКАЯ ЗАГРУЗКА ГАЛЕРЕЙ ИЗ JSON =====
 
+// Кэш, чтобы не дёргать fetch при каждом открытии попапа
+const galleryCache = {};
+
+// Путь к JSON-файлу для конкретной категории
+function getGalleryPath(category) {
+    return `data/galleries/${category}/${category}.json`;
+}
+
+// Асинхронно загружаем фотографии из JSON
+async function loadGallery(category) {
+    if (galleryCache[category]) {
+        return galleryCache[category];
+    }
+
+    try {
+        const res = await fetch(getGalleryPath(category));
+        if (!res.ok) {
+            throw new Error(`Не найден файл: ${getGalleryPath(category)}`);
+        }
+        const data = await res.json();
+        // Превращаем массив объектов [{image: "..."}] в массив строк ["..."]
+        const images = (data.photos || []).map(p => p.image).filter(Boolean);
+        galleryCache[category] = images;
+        return images;
+    } catch (error) {
+        console.error('Ошибка загрузки галереи:', error);
+        return [];
+    }
+}
+
+// ===== DOM-ЭЛЕМЕНТЫ =====
 const popup = document.getElementById('popup');
 const popupClose = document.getElementById('popup-close');
 const track = document.getElementById('carousel-track');
@@ -35,58 +38,23 @@ const dotsContainer = document.getElementById('carousel-dots');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-let currentCategory = 'light';
 let currentIndex = 0;
 let totalImages = 0;
 
-document.querySelectorAll('.equipment-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const category = this.dataset.category;
-        if (category && categories[category]) {
-            openPopup(category);
-        }
-    });
-});
+// ===== ОТКРЫТИЕ ПОПАПА =====
+async function openPopup(category) {
+    // Пока грузим — можно показать попап с пустым состоянием или спиннером
+    const images = await loadGallery(category);
 
-function closePopup() {
-    popup.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-popupClose.addEventListener('click', closePopup);
-
-popup.addEventListener('click', function(e) {
-    if (e.target === this) {
-        closePopup();
-    }
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closePopup();
-    }
-    if (e.key === 'ArrowLeft') {
-        prevSlide();
-    }
-    if (e.key === 'ArrowRight') {
-        nextSlide();
-    }
-});
-
-function openPopup(category) {
-    currentCategory = category;
-    currentIndex = 0;
-
-    const data = categories[category];
-    if (!data || !data.images.length) {
+    if (!images.length) {
         console.warn('Нет картинок для категории:', category);
         return;
     }
 
-    totalImages = data.images.length;
+    currentIndex = 0;
+    totalImages = images.length;
 
-    // Строим карусель
-    renderCarousel(data.images);
+    renderCarousel(images);
     renderDots(totalImages);
     updateCarousel();
 
@@ -94,6 +62,12 @@ function openPopup(category) {
     document.body.style.overflow = 'hidden';
 }
 
+function closePopup() {
+    popup.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// ===== РЕНДЕР КАРУСЕЛИ =====
 function renderCarousel(images) {
     track.innerHTML = '';
     images.forEach(src => {
@@ -101,6 +75,7 @@ function renderCarousel(images) {
         img.src = src;
         img.alt = 'Оборудование';
         img.loading = 'lazy';
+        // Если картинка не найдена — показываем заглушку (если она есть)
         img.onerror = function() {
             this.src = 'images/placeholder.jpg';
         };
@@ -132,24 +107,41 @@ function updateCarousel() {
 }
 
 function nextSlide() {
-    if (currentIndex < totalImages - 1) {
-        currentIndex++;
-        updateCarousel();
-    } else {
-        currentIndex = 0;
-        updateCarousel();
-    }
+    if (!totalImages) return;
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
 }
 
 function prevSlide() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    } else {
-        currentIndex = totalImages - 1;
-        updateCarousel();
-    }
+    if (!totalImages) return;
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
 }
+
+// ===== ОБРАБОТЧИКИ =====
+document.querySelectorAll('.equipment-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const category = this.dataset.category;
+        if (category) {
+            openPopup(category);
+        }
+    });
+});
+
+popupClose.addEventListener('click', closePopup);
+
+popup.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePopup();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (!popup.classList.contains('active')) return;
+    if (e.key === 'Escape') closePopup();
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+});
 
 prevBtn.addEventListener('click', prevSlide);
 nextBtn.addEventListener('click', nextSlide);
@@ -165,6 +157,7 @@ window.addEventListener('resize', function() {
     }, 100);
 });
 
+// ===== БУРГЕР-МЕНЮ =====
 document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
     const nav = document.querySelector('.nav-links');
     if (nav) {
@@ -180,4 +173,4 @@ document.querySelector('.mobile-menu-btn')?.addEventListener('click', function()
     }
 });
 
-console.log('✅ Каталог загружен!');
+console.log('✅ Каталог готов (динамические галереи)');

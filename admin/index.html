@@ -12,6 +12,7 @@
         CMS.init({
             config: {
                 backend: {
+                    load_config_file: false,
                     name: 'github',
                     repo: 'HellHorseman/diapason',
                     branch: 'main',
@@ -21,79 +22,82 @@
                     base_url: 'https://api.github.com',
                     auth_endpoint: 'https://github.com/login/oauth/authorize',
                 },
-                media_folder: 'images/uploads',
+                media_folder: 'images/uploads', // Глобальная папка (на случай, если где-то не указана своя)
                 public_folder: '/images/uploads',
+                // Включаем автоматическое приведение имён файлов к безопасному виду
+                media_libraries: {
+                    default: {
+                        config: {
+                            slugify_filename: true
+                        }
+                    }
+                },
                 collections: [
                     {
                         name: 'settings',
                         label: 'Настройки сайта',
                         label_singular: 'Настройка',
-                        description: 'Основные текстовые блоки сайта',
                         files: [
                             {
                                 name: 'general',
                                 label: 'Общие настройки',
                                 file: 'data/content.json',
-                                description: 'Тексты на всех страницах сайта',
                                 fields: [
                                     { label: 'Название компании', name: 'company_name', widget: 'string' },
-                                    { label: 'Заголовок H1', name: 'hero_title', widget: 'string' },
-                                    { label: 'Подзаголовок', name: 'hero_subtitle', widget: 'text' },
-                                    { label: 'Заголовок услуг', name: 'services_title', widget: 'string' },
-                                    { label: 'Подзаголовок услуг', name: 'services_subtitle', widget: 'text' },
-                                    { label: 'Заголовок оборудования', name: 'equipment_title', widget: 'string' },
-                                    { label: 'Подзаголовок оборудования', name: 'equipment_subtitle', widget: 'text' },
                                     { label: 'Телефон', name: 'contact_phone', widget: 'string' },
                                     { label: 'Email', name: 'contact_email', widget: 'string' },
-                                    { label: 'Адрес', name: 'contact_address', widget: 'string' },
-                                    { label: 'Заголовок контактов', name: 'contact_title', widget: 'string' },
-                                    { label: 'Подзаголовок контактов', name: 'contact_subtitle', widget: 'text' },
-                                    { label: 'Лет на рынке', name: 'years_count', widget: 'string', default: '7' },
-                                    { label: 'Клиентов', name: 'clients_count', widget: 'string', default: '500+' },
-                                    { label: 'Мероприятий', name: 'events_count', widget: 'string', default: '1000+' }
+                                    { label: 'Адрес', name: 'contact_address', widget: 'string' }
                                 ]
                             }
                         ]
                     },
+                    // --- Коллекция для Света ---
                     {
-                        name: 'services',
-                        label: 'Услуги',
-                        label_singular: 'Услуга',
-                        folder: 'data/services',
-                        create: true,
+                        name: 'gallery_light',
+                        label: 'Галерея: Свет',
+                        label_singular: 'Фото (Свет)',
+                        folder: 'data/galleries/light',
+                        create: false,
                         extension: 'json',
                         format: 'json',
-                        summary: '{{fields.title}}',
+                        // Указываем папку для загрузки именно этой коллекции
+                        media_folder: 'images/light',
+                        public_folder: '/images/light',
                         fields: [
-                            { label: 'Иконка (эмодзи)', name: 'icon', widget: 'string', default: '🔧' },
-                            { label: 'Название услуги', name: 'title', widget: 'string' },
-                            { label: 'Описание', name: 'description', widget: 'text' }
+                            { label: 'ID', name: 'id', widget: 'string', default: 'light', hidden: true },
+                            { label: 'Фотографии', name: 'photos', widget: 'list', field: { label: 'Фото', name: 'image', widget: 'image' } }
                         ]
                     },
+                    // --- Коллекция для Звука ---
                     {
-                        name: 'equipment',
-                        label: 'Оборудование',
-                        label_singular: 'Единица оборудования',
-                        folder: 'data/equipment',
-                        create: true,
+                        name: 'gallery_sound',
+                        label: 'Галерея: Звук',
+                        label_singular: 'Фото (Звук)',
+                        folder: 'data/galleries/sound',
+                        create: false,
                         extension: 'json',
                         format: 'json',
-                        summary: '{{fields.name}} ({{fields.category}})',
+                        media_folder: 'images/sound',
+                        public_folder: '/images/sound',
                         fields: [
-                            { label: 'Иконка (эмодзи)', name: 'icon', widget: 'string', default: '🔊' },
-                            { label: 'Название', name: 'name', widget: 'string' },
-                            { 
-                                label: 'Категория', 
-                                name: 'category', 
-                                widget: 'select',
-                                options: [
-                                    { label: 'Световое', value: 'light' },
-                                    { label: 'Звуковое', value: 'sound' },
-                                    { label: 'Сцены и конструкции', value: 'stages' }
-                                ]
-                            },
-                            { label: 'Краткое описание', name: 'description', widget: 'text', required: false },
-                            { label: 'Цена (в сутки)', name: 'price', widget: 'string', required: false, hint: 'Например: 5 000 ₽' }
+                            { label: 'ID', name: 'id', widget: 'string', default: 'sound', hidden: true },
+                            { label: 'Фотографии', name: 'photos', widget: 'list', field: { label: 'Фото', name: 'image', widget: 'image' } }
+                        ]
+                    },
+                    // --- Коллекция для Сцены ---
+                    {
+                        name: 'gallery_stage',
+                        label: 'Галерея: Сцена',
+                        label_singular: 'Фото (Сцена)',
+                        folder: 'data/galleries/stage',
+                        create: false,
+                        extension: 'json',
+                        format: 'json',
+                        media_folder: 'images/stage',
+                        public_folder: '/images/stage',
+                        fields: [
+                            { label: 'ID', name: 'id', widget: 'string', default: 'stage', hidden: true },
+                            { label: 'Фотографии', name: 'photos', widget: 'list', field: { label: 'Фото', name: 'image', widget: 'image' } }
                         ]
                     }
                 ]
