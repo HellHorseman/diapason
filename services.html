@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис</title>
+    <link rel="stylesheet" href="css/catalogStyle.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="container">
+        <div class="logo">
+            <img src="images/headerLogo.svg" alt="Диапазон" class="logo-img-head">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Прокат</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+</header>
+
+<section id="services" class="equipment">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">СЕРВИС</span>
+        </div>
+
+        <div class="equipment-grid services-grid">
+            <div class="equipment-card" data-category="service">
+                <div class="equipment-card-inner">
+                    <div class="equipment-image-wrapper">
+                        <img class="equipment-image service-image" src="images/сервис.png" alt="Сервис">
+                    </div>
+                </div>
+                <div class="equipment-info">
+                    <span class="equipment-tabs">СЕРВИС</span>
+                </div>
+            </div>
+
+            <div class="equipment-card" data-category="shop">
+                <div class="equipment-card-inner">
+                    <div class="equipment-image-wrapper">
+                        <img class="equipment-image shop-image" src="images/магазин.png" alt="Магазин" onclick="goToShop()">
+                    </div>
+                </div>
+                <div class="equipment-info">
+                    <span class="equipment-tabs">DPSNSHOP.RU</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/footerLogo.svg" alt="Диапазон" class="logo-img">
+            </div>
+            <div class="footer-contacts">
+                <h4>Контакты</h4>
+                <p data-field="contact_phone">+7(8482)62-04-02</p>
+                <p data-field="contact_email">diapason@list.ru</p>
+                <p data-field="contact_address">ул. 70 лет Октября, 54А</p>
+            </div>
+            <div class="footer-links">
+                <h4>Компания</h4>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Прокат</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2008-2026 Диапазон. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function goToShop() {
+        window.open('https://dpsnshop.ru', '_blank');
+    }
+</script>
+</body>
+</html>

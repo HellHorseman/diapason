@@ -390,3 +390,25 @@ footer {
     font-size: 14px;
     color: #5a5a60;
 }
+
+
+
+
+.service-image {
+    width: 300px;
+    height: auto;
+    max-height: 400px;
+    margin-top: -20px;
+}
+
+.shop-image {
+    width: 320px;
+    height: auto;
+    max-height: 350px;
+    margin-top: -40px;
+}
+
+.equipment-card[data-category="shop"] .equipment-info,
+.equipment-card[data-category="service"] .equipment-info {
+    padding-top: 20px;
+}
