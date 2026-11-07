@@ -20,3 +20,19 @@ document.querySelector('.mobile-menu-btn')?.addEventListener('click', function()
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Ищем карточку именно с data-category="service"
+    const serviceCard = document.querySelector('.equipment-card[data-category="service"]');
+
+    if (serviceCard) {
+        serviceCard.style.cursor = 'pointer';
+        serviceCard.addEventListener('click', (e) => {
+            // Если кликнули по картинке магазина (у неё onclick) — не переходим
+            if (e.target.closest('[onclick]')) return;
+            window.location.href = 'contacts.html';
+        });
+    } else {
+        console.warn('Карточка Сервиса не найдена');
+    }
+});
